@@ -1,0 +1,18 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "waitForServer",
+        "type": "shell",
+        "command": "while ! httping -t 1 -i 1 -qc1 http://localhost:${port} ; do sleep 1 ; done",
+        "group": "none",
+        "presentation": {
+          "reveal": "silent",
+          "panel": "new",
+          "showReuseMessage": false
+        }
+      }
+    ]
+  }

@@ -1,0 +1,16 @@
+{
+	"name": "devcontainer",
+	"context": "..",
+	"dockerFile": "Dockerfile",
+	"settings": {},
+	"extensions": [
+		"Gruntfuggly.todo-tree",
+		// Even though this extension is deprecated, this is the only one that works for client/server debugging
+		"msjsdiag.debugger-for-chrome"
+	],
+	"containerEnv": {
+		"port": "8080"
+	},
+	"forwardPorts": [ 8080 ],
+	"updateContentCommand": "${containerWorkspaceFolder}/.devcontainer/updateContent.sh ${containerWorkspaceFolder}"
+}
