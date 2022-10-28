@@ -4,6 +4,8 @@
         <title>jsonrpc-bidirectional http example client</title>
     </head>
     <body>
+        <script type="text/javascript" src="client.js"></script>
+
         <!-- libs and source to enable RPC -->
         <script type="text/javascript" src="/node_modules/babel-polyfill/dist/polyfill.min.js"></script>
         <script type="text/javascript" src="/node_modules/whatwg-fetch/fetch.js"></script>
@@ -11,12 +13,10 @@
         <script type="text/javascript" src="/node_modules/jsonrpc-bidirectional/builds/browser/es5/jsonrpc.min.js"></script>    
         <script type="text/javascript" src="rpc_client.js"></script>
 
-        <script type="text/javascript" src="client.js"></script>
-
         <div id="main">
-            <h1 id="greeting_text">Hello World!</h1>
-            <input id="greet_name" type="text" value="World"/>
-            <button id="greet_button" type="button">Greet me</button>
-        </div>            
+            <h1 id="greeting_text"> </h1>
+            <input id="name" type="text" width="250"/>
+            <input id="greet_button" type="button">Greet me</input>
+        </div>
     </body>
 </html>

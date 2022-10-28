@@ -17,6 +17,6 @@ export class RpcServer extends JSONRPC.EndpointBase
 
     async greet(incomingRequest, name)
     {
-        return `Hello, ${name}!`;
+        return "Hello, " + name;
     }
 }
