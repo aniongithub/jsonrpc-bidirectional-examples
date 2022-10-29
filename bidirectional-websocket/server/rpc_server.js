@@ -17,6 +17,8 @@ export class RpcServer extends JSONRPC.EndpointBase
 
     async greet(incomingRequest, name)
     {
-        return "Hello, " + name;
+        var greeting = `Hello, ${name}!`;
+        await incomingRequest.reverseCallsClient.rpc("alert_greet", [greeting + " (callback from server)"]);
+        return greeting;
     }
 }

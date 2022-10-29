@@ -6,7 +6,7 @@
       {
         "label": "waitForServer",
         "type": "shell",
-        "command": "while ! httping -t 1 -i 1 -qc1 http://localhost:${port} ; do sleep 1 ; done",
+        "command": "while ! httping -t 1 -qc1 http://localhost:${port} ; do sleep 1 ; done",
         "group": "none",
         "presentation": {
           "reveal": "silent",

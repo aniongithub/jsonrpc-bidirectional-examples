@@ -22,6 +22,11 @@ jsonrpcServer.addPlugin(new JSONRPC.Plugins.Server.AuthenticationSkip());
 jsonrpcServer.addPlugin(new JSONRPC.Plugins.Server.AuthorizeAll());
 
 const wsJSONRPCRouter = new JSONRPC.BidirectionalWebsocketRouter(jsonrpcServer);
+wsJSONRPCRouter.on("madeReverseCallsClient", (clientReverseCalls) => 
+	{ 
+		/*add plugins or just setup the client even further*/ 
+		console.log(`${clientReverseCalls}`);
+	});
 const webSocketServer = new WebSocketServer({ noServer: true });
 webSocketServer.on(
 	"connection", 

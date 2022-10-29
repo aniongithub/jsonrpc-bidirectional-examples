@@ -45,7 +45,29 @@
                 "<node_internals>/**"
             ],
             "console": "integratedTerminal"
+        },
+        {
+            "name": "bidirectional-websocket-client",
+            "type": "chrome",
+            "request": "launch",
+            "url": "http://localhost:${env:port}/",
+            "webRoot": "${workspaceRoot}/bidirectional-websocket/client",
+            "browserLaunchLocation": "ui",
+            "runtimeExecutable": "stable",
+            "preLaunchTask": "waitForServer"           
+        },
+        {
+            "name": "bidirectional-websocket-server",
+            "type": "node",
+            "request": "launch",
+            "cwd": "${workspaceFolder}/bidirectional-websocket",
+            "args": [ "server/server.js" ],
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "console": "integratedTerminal"
         }
+
     ],
     "compounds": [
         {
@@ -61,6 +83,14 @@
                 "unidirectional-websocket-client",
                 "unidirectional-websocket-server" 
             ]
+        },
+        {
+            "name": "bidirectional-websocket",
+            "configurations": [
+                "bidirectional-websocket-client",
+                "bidirectional-websocket-server" 
+            ]
         }
+
     ]
 }
