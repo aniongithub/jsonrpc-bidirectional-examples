@@ -5,8 +5,9 @@
 	"settings": {},
 	"extensions": [
 		"Gruntfuggly.todo-tree",
-		// Even though this extension is deprecated, this is the only one that works for client/server debugging
-		"msjsdiag.debugger-for-chrome"
+		"msjsdiag.debugger-for-chrome",
+		"zaaack.markdown-editor",
+		"eamodio.gitlens"
 	],
 	"containerEnv": {
 		"port": "8080"
