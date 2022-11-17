@@ -1,4 +1,4 @@
-const client = new RpcClient(`http://${location.host}/api`);
+const client = new RpcClient(`${location.protocol}://${location.host}/api`);
 const webSocketTransport = new JSONRPC.Plugins.Client.WebSocketTransport(
 	/*ws*/ null, 
 	/*bBidirectionalMode*/ false,

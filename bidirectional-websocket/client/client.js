@@ -6,7 +6,8 @@ jsonrpcServer.addPlugin(new JSONRPC.Plugins.Server.AuthenticationSkip());
 jsonrpcServer.addPlugin(new JSONRPC.Plugins.Server.AuthorizeAll());
 
 var client;
-var ws = new WebSocket(`ws://${location.host}/api`);
+websocketProtocol = location.protocol == "https:" ? "wss:" : "ws:";
+var ws = new WebSocket(`${websocketProtocol}//${location.host}/api`);
 ws.addEventListener("open", function(event){
 	var wsJSONRPCRouter = new JSONRPC.BidirectionalWebsocketRouter(jsonrpcServer);
 	var nWebSocketConnectionID = wsJSONRPCRouter.addWebSocketSync(ws);

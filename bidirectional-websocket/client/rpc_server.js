@@ -4,7 +4,7 @@ function RpcServer()
 		this,
 		[
 			/*strName*/ "RpcServer", 
-			/*strPath*/ location.protocol + "//" + location.host + "/api", 
+			/*strPath*/ `${location.protocol}//${location.host}/api`,
 			/*objReflection*/ {},
 			/*classReverseCallsClient*/ JSONRPC.Client
 		]
