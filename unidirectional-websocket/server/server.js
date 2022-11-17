@@ -22,7 +22,7 @@ jsonrpcServer.addPlugin(new JSONRPC.Plugins.Server.AuthenticationSkip());
 jsonrpcServer.addPlugin(new JSONRPC.Plugins.Server.AuthorizeAll());
 
 const wsJSONRPCRouter = new JSONRPC.BidirectionalWebsocketRouter(jsonrpcServer);
-const webSocketServer = new WebSocketServer({ noServer: true });
+const webSocketServer = new WebSocketServer({ server: httpServer });
 webSocketServer.on(
 	"connection", 
 	async(webSocket, upgradeRequest) => 
@@ -32,9 +32,4 @@ webSocketServer.on(
 );
 
 const port = process.env.port;
-const server = httpServer.listen(port, () => console.log(`Listening on port ${port}!`));
-server.on('upgrade', (request, socket, head) => {
-    webSocketServer.handleUpgrade(request, socket, head, socket => {
-        webSocketServer.emit('connection', socket, request);
-    });
-});
+httpServer.listen(port, () => console.log(`Listening on port ${port}!`));
