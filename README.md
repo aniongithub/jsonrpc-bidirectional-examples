@@ -6,7 +6,7 @@ This repo contains examples to show usage of the excellent [jsonrpc-bidirectiona
 
 ### Local (devcontainer)
 
-To run these examples, you will need to set up the correct infrastructure to [run devcontainers](https://code.visualstudio.com/docs/devcontainers/containershttps:/) for your platform. Once opened inside the devcontainer, use the `unidirectional-http`, `unidirectional-websocket` or the `bidirectional-websocket` composite launch configs to launch the server and client directly from VS Code. This will allow you to place breakpoints for server/client directly in VS Code without needing the debug window in the browser.
+To run these examples, you will need to set up the correct infrastructure to [run devcontainers](https://code.visualstudio.com/docs/devcontainers/containers#_installation) for your platform. Once opened inside the devcontainer, use the `unidirectional-http`, `unidirectional-websocket` or the `bidirectional-websocket` composite launch configs to launch the server and client directly from VS Code. This will allow you to place breakpoints for server/client directly in VS Code without needing the debug window in the browser.
 
 ### CodeSpaces (Github)
 
