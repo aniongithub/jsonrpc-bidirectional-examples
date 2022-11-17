@@ -13,7 +13,10 @@ const app = express();
 const httpServer = http.createServer(app);
 
 app.use("/", express.static("client"));
-app.use('/node_modules', express.static('../node_modules'));
+app.use('/js/babel-polyfill', express.static('../node_modules//babel-polyfill/dist'));
+app.use('/js/whatwg-fetch', express.static('../node_modules/whatwg-fetch'));
+app.use('/js/es6-promise', express.static('../node_modules/es6-promise/dist'));
+app.use('/js/jsonrpc-bidirectional', express.static('../node_modules/jsonrpc-bidirectional/builds/browser/es7'));
 
 const jsonrpcServer = new JSONRPC.Server();
 jsonrpcServer.registerEndpoint(new RpcServer());
